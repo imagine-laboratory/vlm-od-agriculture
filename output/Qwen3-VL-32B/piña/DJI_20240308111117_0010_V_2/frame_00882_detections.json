@@ -1,0 +1,9 @@
+There is no object labeled "piña" (pineapple) visible in the image. The image shows green grass growing in patches on brown soil, with no fruits or plants resembling a pineapple.
+
+Therefore, the JSON output is:
+
+```json
+{
+  "piña": []
+}
+```

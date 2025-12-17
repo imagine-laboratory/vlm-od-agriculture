@@ -1,0 +1,9 @@
+There is no pineapple crown visible in the image. The image shows a gray plastic object, possibly a footrest or step, lying on reddish-brown soil with patches of green and dry grass. No pineapple or its crown is present.
+
+Therefore, the JSON output is:
+
+```json
+{
+  "pineapple_crown": []
+}
+```

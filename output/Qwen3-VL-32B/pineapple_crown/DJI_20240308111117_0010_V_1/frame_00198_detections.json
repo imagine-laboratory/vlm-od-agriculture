@@ -1,0 +1,7 @@
+```json
+[
+	{"bbox_2d": [271, 477, 494, 999], "label": "pineapple crown"},
+	{"bbox_2d": [680, 505, 924, 999], "label": "pineapple crown"},
+	{"bbox_2d": [0, 304, 212, 730], "label": "pineapple crown"}
+]
+```

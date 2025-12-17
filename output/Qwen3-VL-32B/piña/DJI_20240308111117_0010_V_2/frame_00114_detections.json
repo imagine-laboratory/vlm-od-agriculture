@@ -1,0 +1,9 @@
+There is no object named "piña" visible in the image. The image shows a yellow tripod-like device on a dirt ground, possibly surveying equipment, but no piña (pineapple) is present.
+
+Therefore, the JSON output is:
+
+```json
+{
+  "piña": []
+}
+```
