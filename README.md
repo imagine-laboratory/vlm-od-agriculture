@@ -35,6 +35,136 @@ Precision agriculture increasingly relies on drone-based monitoring; however, tr
 
 > **Keywords**: Multimodal Foundation Models, In-context Learning, Precision Agriculture, Segment Anything Model 3, Qwen Models, YOLOv11, Spatial Reasoning, Crop Detection, Parameter-Efficient Fine-Tuning.
 
+
+
+
+
+
+---
+### Evaluation of Object Detection Results
+
+This script evaluates object detection predictions using standard COCO metrics and additional counting-based metrics. It is designed for cross-validation experiments where predictions are stored per model and per dataset fold.
+
+#### Metrics
+
+##### COCO Metrics
+
+The evaluation uses the COCO API to compute: mAP@0.50:0.95 (`mAP_50_95`), mAP@0.50 (`mAP_50`), mAP@0.75 (`mAP_75`), Average Recall@1 detection (`AR_1`), Average Recall@10 detections (`AR_10`), and Average Recall@1000 detections (`AR_1000`)
+
+##### Counting Metrics
+
+Additional counting-oriented metrics are computed using IoU matching: **TP** (True Positives), **FP** (False Positives), **FN** (False Negatives), **Precision**, **Recall**, **F1-score**, **MAE** (Mean Absolute Error between predicted and ground-truth counts), **Bias** (Average counting bias (`predicted_count - ground_truth_count`))
+
+The IoU threshold used for matching can be configured through the command line.
+
+---
+
+#### Directory Structure
+
+Expected directory layout:
+
+```text
+dataset_root/
+├── ds_1/
+│   └── test.json
+├── ds_2/
+│   └── test.json
+├── ds_3/
+│   └── test.json
+├── ds_4/
+│   └── test.json
+└── ds_5/
+    └── test.json
+
+results_root/
+├── Model_A/
+│   ├── ds_1/
+│   │   └── test.json
+│   ├── ds_2/
+│   │   └── test.json
+│   └── ...
+└── Model_B/
+    └── ...
+```
+
+Ground-truth annotations must follow the COCO format, and prediction files should contain a list of detections compatible with the COCO evaluation API.
+
+---
+
+#### Usage
+
+##### Evaluate a Single Model
+
+```bash
+python evaluate.py \
+    --dataset-root /path/to/dataset \
+    --results-root /path/to/results \
+    --models Model_A \
+    --output-csv model_a_results.csv
+```
+
+##### Evaluate Multiple Models
+
+```bash
+python evaluate.py \
+    --dataset-root /path/to/dataset \
+    --results-root /path/to/results \
+    --models \
+        Model_A \
+        Model_B \
+        Model_C \
+    --output-csv comparison.csv
+```
+
+##### Custom IoU Threshold
+
+```bash
+python evaluate.py \
+    --dataset-root /path/to/dataset \
+    --results-root /path/to/results \
+    --models Model_A \
+    --iou-threshold 0.75 \
+    --output-csv results_iou75.csv
+```
+
+---
+
+##### Command Line Arguments
+
+| Argument          | Description                                 | Default                    |
+| ----------------- | ------------------------------------------- | -------------------------- |
+| `--dataset-root`  | Root directory containing dataset folds     | Required                   |
+| `--results-root`  | Root directory containing model predictions | Required                   |
+| `--models`        | List of model names to evaluate             | Required                   |
+| `--folds`         | Dataset folds to evaluate                   | `ds_1 ds_2 ds_3 ds_4 ds_5` |
+| `--gt-filename`   | Ground-truth annotation filename            | `test.json`                |
+| `--pred-filename` | Prediction filename                         | `test.json`                |
+| `--iou-threshold` | IoU threshold used for counting metrics     | `0.5`                      |
+| `--output-csv`    | Output CSV file                             | `results.csv`              |
+
+---
+
+##### Output
+
+The script generates a CSV file containing one row per model-fold pair:
+
+| model   | fold | mAP_50_95 | mAP_50 | Precision | Recall | F1    | MAE  |
+| ------- | ---- | --------- | ------ | --------- | ------ | ----- | ---- |
+| Model_A | ds_1 | 0.452     | 0.731  | 0.812     | 0.794  | 0.803 | 1.24 |
+| Model_A | ds_2 | 0.467     | 0.745  | 0.826     | 0.801  | 0.813 | 1.10 |
+
+Additionally, the script prints the average performance across all folds for each model.
+
+---
+
+##### Dependencies
+
+Install the required packages:
+
+```bash
+pip install pandas numpy torch torchvision pycocotools
+```
+
 ---
 ## 📖 Citation
 If you find this repository useful, please star ⭐ the repository and cite:
