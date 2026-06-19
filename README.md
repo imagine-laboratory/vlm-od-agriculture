@@ -24,8 +24,16 @@
 
 ---
 
+<p align="center">
+  <img src="assets/first_page_zero_shot_page.jpg?raw=true" width="99.1%" />
+</p>
+
+
+---
 ## 📝 Abstract
 Precision agriculture increasingly relies on drone-based monitoring; however, traditional deep learning models often require extensive labeled datasets to maintain accuracy. This paper presents a comparative study of multimodal foundation models against state-of-the-art detectors, including YOLOv11 and RT-DETR, for crop detection under limited data samples. We evaluate the Segment Anything Model (SAM) 3 and the Qwen~3 and 3.5 series using Low-Rank Adaption (LoRA), a parameter-efficient fine-tuning technique on a specialized pineapple plantation dataset. Our results show that while foundation models match or exceed classical detectors with only 5 and 10 training images, a significant localization gap exists in Large Language Models' reasoning capabilities. Specifically, the Qwen Thinking (or reasoning-based) variants introduce spatial noise that degrades coordinate precision. Conversely, SAM-based pipelines coupled with RT-DETR offer the most robust few-shot performance. These findings demonstrate that while multimodal models provide a scalable alternative to exhaustive manual labeling, bridging the gap between semantic reasoning and geometric precision remains critical for industrial-grade autonomous farming.
+
+> **Keywords**: Multimodal Foundation Models, In-context Learning, Precision Agriculture, Segment Anything Model 3, Qwen Models, YOLOv11, Spatial Reasoning, Crop Detection, Parameter-Efficient Fine-Tuning.
 
 ---
 ## 📖 Citation
@@ -47,3 +55,7 @@ If you find this repository useful, please star ⭐ the repository and cite:
   url       = {https://doi.org/10.1145/3795101.3814670},
 }
 ```
+---
+
+## Acknowledgements
+We thank the Costa Rica National High Technology Center (Kabré supercomputer) and the University of Costa Rica for computational support.
