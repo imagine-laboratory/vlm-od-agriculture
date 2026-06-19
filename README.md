@@ -15,7 +15,7 @@
 <div align="center">
   <a href="https://scholar.google.com/citations?user=j02Fj8EAAAAJ&hl=en" target="_blank">Fabian&nbsp;Fallas-Moya</a><sup>1</sup> &ensp; <b>&middot;</b> &ensp;
   <a href="https://scholar.google.com/citations?user=vipkAKEAAAAJ&hl=es" target="_blank">Danny&nbsp;Xie-Li</a><sup>2</sup> &ensp; <b>&middot;</b> &ensp;
-  <a href="https://scholar.google.com/citations?user=O3hhdFQAAAAJ&hl=en" target="_blank">Nixon&nbsp;Aguero-Elizondo</a><sup>2</sup>
+  <a href="#" target="_blank">Nixon&nbsp;Aguero-Elizondo</a><sup>2</sup>
   <br>
   <sup>1</sup> Atlantic Campus, Universidad de Costa Rica, Cartago, Costa Rica &emsp; <br>
   <sup>2</sup> Computer Science Department, Instituto Tecnológico de Costa Rica, Cartago, Costa Rica &emsp;
