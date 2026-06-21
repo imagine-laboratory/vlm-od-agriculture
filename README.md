@@ -189,4 +189,4 @@ If you find this repository useful, please star ⭐ the repository and cite:
 ---
 
 ## Acknowledgements
-We thank the Costa Rica National High Technology Center (Kabré supercomputer) and the University of Costa Rica for computational support.
+We gratefully acknowledge the computational support provided by the Costa Rica National High Technology Center (Kabré Supercomputer) and the Scientific Computing Cluster of the University of Costa Rica.
