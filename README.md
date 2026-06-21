@@ -35,9 +35,10 @@ Precision agriculture increasingly relies on drone-based monitoring; however, tr
 
 > **Keywords**: Multimodal Foundation Models, In-context Learning, Precision Agriculture, Segment Anything Model 3, Qwen Models, YOLOv11, Spatial Reasoning, Crop Detection, Parameter-Efficient Fine-Tuning.
 
+---
+## 📰 News
 
-
-
+🎉 **June 2026** — Our paper *"From Semantic Reasoning to Geometric Precision: Optimizing Multimodal Foundation Models via Custom Prompting and Parameter-Efficient Fine-Tuning for Crop Counting"* has been accepted at the **[Latin American Applications of Optimization and AI (LAAoO+AI)](https://gecco-2026.sigevo.org/Accepted+Workshop+Papers#&sort[wptrackerlist23-2]=0-0)** workshop of **GECCO 2026**, San José, Costa Rica (July 13–17, 2026). 📄 The paper will be published in the **GECCO 2026 Companion Proceedings (ACM)**.
 
 
 ---
